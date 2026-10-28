@@ -178,4 +178,3 @@ body.cinematic .cinematic-copy h2.cinematic-quote{font-size:4.05cqi;line-height:
 .cinematic-poem::before{content:"";display:block;width:8cqi;height:1px;margin:0 auto 1.3cqi;background:linear-gradient(90deg,transparent,#b9dfef88,transparent)}
 .cinematic-poem>span{display:block}
 .cinematic-seal{display:block;width:1.5cqi;height:1.7cqi;margin:1.25cqi auto 0;border:1px solid #b96d7b88;border-radius:1px;background:#7e3d5155;color:#d4a0ab;font-style:normal;font-size:1.05cqi;line-height:1.55cqi;letter-spacing:0}
-

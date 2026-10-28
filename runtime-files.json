@@ -100,7 +100,7 @@
     },
     {
       "path": "style.css",
-      "sha256": "e2172c454f6163f8944ceea63fdd2ea08ad9ad1922a1d25af9b4d603740423da"
+      "sha256": "3b09a21c3e891150134210238283973d89bb57cf6b2597b90a4753b106fac618"
     },
     {
       "path": "tools/build-startup-gate.ps1",
