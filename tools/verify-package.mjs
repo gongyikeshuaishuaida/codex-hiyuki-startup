@@ -4,8 +4,8 @@ import {resolve,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {chromium} from 'playwright';
-import {buildInjection} from '../extension/payload.mjs';
-const root=resolve(import.meta.dirname,'..');
+const root=process.env.PACKAGE_UNDER_TEST?resolve(process.env.PACKAGE_UNDER_TEST):resolve(import.meta.dirname,'..');
+const {buildInjection}=await import(pathToFileURL(join(root,'extension/payload.mjs')).href);
 const manifest=JSON.parse(await readFile(join(root,'runtime-files.json'),'utf8'));
 for(const item of manifest.files) {
  const data=await readFile(join(root,item.path));
@@ -22,6 +22,11 @@ try {
  if(process.argv.includes('--screenshots')) {await mkdir(join(root,'docs'),{recursive:true});await page.locator('.window').screenshot({path:join(root,'docs/preview.png')});}
  await page.evaluate(()=>window.launcherUI.openSettings());assert(await page.locator('#settings-dialog').isVisible());
  if(process.argv.includes('--screenshots'))await page.locator('#settings-dialog').screenshot({path:join(root,'docs/settings.png')});
+ await page.locator('#intro-title').fill('测试角色');await page.locator('#artwork-subtitle').fill('测试台词');await page.locator('#preview-images').click();
+ await page.waitForFunction(()=>!document.querySelector('#settings-dialog').open);assert.equal(await page.locator('.cinematic-quote').textContent(),'测试台词');
+ await page.reload();await page.waitForFunction(()=>document.querySelector('.cinematic-quote')?.textContent==='测试台词');
+ await page.evaluate(()=>window.launcherUI.openSettings());await page.locator('#reset-images').click();await page.locator('#preview-images').click();
+ await page.waitForFunction(()=>!document.querySelector('#settings-dialog').open&&document.querySelector('.cinematic-quote').textContent==='该下雪了');assert.equal(await page.locator('.cinematic-name').textContent(),'绯雪');
  const host=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'no-preference'});host.on('pageerror',e=>errors.push(e.message));
  await host.setContent('<html><body><main>App ready</main></body></html>');await host.evaluate(await buildInjection(root,{deferStart:true}));await host.waitForFunction(()=>window.__aemeathExtension?.status().ready,null,{timeout:60000});
  const prepared=await host.evaluate(()=>({status:window.__aemeathExtension.status(),visibility:document.querySelector('iframe').style.visibility}));assert.equal(prepared.status.phase,'prepared');assert.equal(prepared.visibility,'hidden');
@@ -30,5 +35,5 @@ try {
   assert.equal(state.error,null);assert(Math.abs(state.videoTime-Math.max(0,t-8.9))<.04,`Native action seeks at ${t}s`);
  }
  await host.evaluate(()=>window.__aemeathExtension.dispose());assert.equal(await host.locator('iframe').count(),0);assert.deepEqual(errors,[]);
- console.log(JSON.stringify({result:'PASS',checkedFiles:manifest.files.length,preview:defaults,settings:true,preparedInjection:true,nativeMotion:true,dispose:true}));
+ console.log(JSON.stringify({result:'PASS',checkedFiles:manifest.files.length,preview:defaults,settingsSaveReloadReset:true,preparedInjection:true,nativeMotion:true,dispose:true}));
 }finally{await browser.close();}
