@@ -1,0 +1,16 @@
+.build/
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.log
+*.tmp
+*.zip
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+__pycache__/
+*.mp4
+!assets/hiyuki-native-hd-motion.mp4

@@ -1,0 +1,154 @@
+{
+  "version": "1.0.0",
+  "visualVersion": 13,
+  "files": [
+    {
+      "path": "animation.js",
+      "sha256": "6c9796330f123d77ff7179583ba182ac5cd7764ddbafad63c2428cc75d6bf574"
+    },
+    {
+      "path": "assets/artwork.jpg",
+      "sha256": "2187a5729b20d4c7cdd9727e3be7452b8f7f70efbc63a1c0ddd9ff842a9e8633"
+    },
+    {
+      "path": "assets/avatar.jpg",
+      "sha256": "a7c767525aac0393b2ce447f89b824646b84b4596f2b8aa0964f0ae834b4e046"
+    },
+    {
+      "path": "assets/config.js",
+      "sha256": "8de363fb5465fc69c6bbf8abea0042d96e709655edcc496aefd687a175a440c3"
+    },
+    {
+      "path": "assets/contours.js",
+      "sha256": "c20f004fad99eefc297ca065dba00aec1845e715ac04e2219d2fb4ae2efc4121"
+    },
+    {
+      "path": "assets/hiyuki-line-plate.png",
+      "sha256": "b81ca6be015f70ca0671fb97dd7d4eb3bec3bdd201661611ba336eac737904b6"
+    },
+    {
+      "path": "assets/hiyuki-native-hd-motion.mp4",
+      "sha256": "cec5eaa387d7838f8a73339dc61430e3c8a3f3c153f7b4fd49cee5fb14abc38f"
+    },
+    {
+      "path": "assets/hiyuki-native-hd-poster.png",
+      "sha256": "9b94ae14789e8680f5a2fb3d488d76f2bd311fdc332326a2c4d490e8fd7fd41b"
+    },
+    {
+      "path": "assets/ice-crystal-v5.png",
+      "sha256": "fd83153ea48ad65537643cc91c29054380fc5d78eaafede67814fb91d80fabe8"
+    },
+    {
+      "path": "assets/icons/launch.ico",
+      "sha256": "20008752b166af9a3e6bbd6ae59297084aa399ea681bc17673e265e23858f0f9"
+    },
+    {
+      "path": "assets/icons/settings.ico",
+      "sha256": "4e4369422448599d14a20751d46d0c8ab2c991c010f136879162bc1468b9f078"
+    },
+    {
+      "path": "blade-fx.js",
+      "sha256": "f6163c0b304bbbe1dc141b01c14084e2d67634776d62828756ec3e75283e04fd"
+    },
+    {
+      "path": "check.cmd",
+      "sha256": "eb77428053abedd43df9060dc5f71dd55ed459c3aaa2eb8c2c0ac7c9d0fbda13"
+    },
+    {
+      "path": "cinematic.js",
+      "sha256": "5e601443ccd657645bd3c31a1e7377775e222081fac616efc733d2fef878a699"
+    },
+    {
+      "path": "extension/cdp.mjs",
+      "sha256": "f376abce1f6004b7e812706713e99970f374b6b8610588e42426ccbc5ffcdb1e"
+    },
+    {
+      "path": "extension/payload.mjs",
+      "sha256": "277275377a923c688626f8c5d6e967ae2daad88b5f2aa0fe6b7b14078fc9d5a8"
+    },
+    {
+      "path": "extension/pet-settle.mjs",
+      "sha256": "6689719d92f2b445390d938aef27dceece5192d6b13b214d2e38b02558ad47dd"
+    },
+    {
+      "path": "extension/renderer.mjs",
+      "sha256": "13b9b6c6d5de242381b4608d6da8eaad3e3d000fbd4dc04711100b5a5c1a0dfa"
+    },
+    {
+      "path": "extension/startup-readiness.mjs",
+      "sha256": "ff3f00309298e30a19da407aa1d24b2d9b35dd92fa61db20fa6ef429537b4528"
+    },
+    {
+      "path": "extension/wallpaper.css",
+      "sha256": "02f99ee36e9f22bc20a89b7c7a03c2d864f341c9cbc00273ffd93fc839ba38f7"
+    },
+    {
+      "path": "extension/windows-wallpaper.mjs",
+      "sha256": "ebb19498201a101eeec244d97c9ec530968364eb4fc5708a57ad07c613c3a93f"
+    },
+    {
+      "path": "image-settings.js",
+      "sha256": "c469e2d78147dc7122c98fd27bbde417851c28e0a91799b3553d6ccf6535fccc"
+    },
+    {
+      "path": "index.html",
+      "sha256": "4550da965a67e6f9875032b4716d9d26d94ceea23124d44cdaefcb695cf9f59d"
+    },
+    {
+      "path": "install.cmd",
+      "sha256": "70a42df7f6f26e06358a183e6480081c6eb69141617d7baf1bc105d2ea884df1"
+    },
+    {
+      "path": "style.css",
+      "sha256": "e2172c454f6163f8944ceea63fdd2ea08ad9ad1922a1d25af9b4d603740423da"
+    },
+    {
+      "path": "tools/build-startup-gate.ps1",
+      "sha256": "612010294cf7efcebadf957b78bf596eacd909b4bf28f6fffb5abc391868cec0"
+    },
+    {
+      "path": "tools/deferred-start-regression.mjs",
+      "sha256": "28d9e2a6e880833a44267f2388811f3f310672cf7336a82bd48f1d70aa3f4ecc"
+    },
+    {
+      "path": "tools/extension.test.mjs",
+      "sha256": "b70f2bdfee759030d9a9796d4273b27c2ed839ed174efd93d582fe36e955502c"
+    },
+    {
+      "path": "tools/install-windows.ps1",
+      "sha256": "d953df67aaaa5f9b9ac7e48f5bb6326abcf0071cb2cf5851767985b0133d03bb"
+    },
+    {
+      "path": "tools/launch-hidden.vbs",
+      "sha256": "1c50b2646e25b446a6bc657225e529fa5eb6b29f01bdd197665b01c3226d0437"
+    },
+    {
+      "path": "tools/open-codex-settings.mjs",
+      "sha256": "57b5b25a44faea6d1e5b392604ef20b6e4a6b117022202d0bde7cb1ca626d3d1"
+    },
+    {
+      "path": "tools/open-codex-settings.ps1",
+      "sha256": "d186c698666db869c6508c2ab19ccd2437f2b3f0c832aeab657626e3be9d52ef"
+    },
+    {
+      "path": "tools/pet-settle.test.mjs",
+      "sha256": "cc8429aefe9e3725e6dac489adcebfd2917ba1d62b4c25a4bcbd4349f4d23c6f"
+    },
+    {
+      "path": "tools/settings-hidden.vbs",
+      "sha256": "fe2643276596b439dcb7f79f00d49d9e8a1a569bc4e7820a59a6d7552ce1e964"
+    },
+    {
+      "path": "tools/start-codex-background.ps1",
+      "sha256": "c5af5e29b430830d8534370c6685583c6ad2158bd3892e09b3f5e2c74e1a16be"
+    },
+    {
+      "path": "tools/verify-package.mjs",
+      "sha256": "a4758f5ec9bd7b1843e35338d020f875b32053d1ecf59b449542d0bc6baa7ef8"
+    },
+    {
+      "path": "windows/StartupGate.cs",
+      "sha256": "d0482dee4316ae83635ad133f7f5be77fa417271a9fc3ee3f20b81d175491b8b"
+    }
+  ]
+}

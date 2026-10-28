@@ -1,0 +1,17 @@
+{
+  "name": "codex-hiyuki-startup",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tools/extension.test.mjs tools/pet-settle.test.mjs",
+    "test:browser": "node tools/verify-package.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "playwright": "1.57.0"
+  },
+  "description": "Windows Codex startup animation and local wallpaper themed around Hiyuki"
+}
