@@ -62,7 +62,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tools\install-windows.
 - 状态与错误日志位于 `%LOCALAPPDATA%\OpenAI\ChatGPTFix`。
 - 发布前检查包含文件哈希、全新路径解压、Windows PowerShell 语法、门控编译、页面预览、注入与设置检查。**浏览器测试不等同于另一台电脑实际启动成功**；他人电脑的应用版本、硬件及策略仍以实测为准。
 
-开发者可使用 Node.js 22 或以上。Windows 的浏览器检查使用系统 Microsoft Edge，验证与应用一致的 H.264 高清动作解码；Playwright 的精简浏览器不一定带有该解码器：
+开发者可使用 Node.js 22 或以上。Windows 的浏览器检查默认使用系统 Microsoft Edge；云端还会分别检查两个测试浏览器能否解码附带的 H.264 动作：
 
 ```powershell
 npm ci

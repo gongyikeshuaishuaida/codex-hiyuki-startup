@@ -15,7 +15,7 @@ const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_EX
 const errors=[];
 try {
  const page=await browser.newPage({viewport:{width:1280,height:960},reducedMotion:'no-preference'});page.on('pageerror',e=>errors.push(e.message));
- await page.goto(pathToFileURL(join(root,'index.html')).href);await page.waitForFunction(()=>window.launcherUI&&document.querySelector('.window').dataset.playing==='true');await page.locator('#pause').click();
+ await page.goto(pathToFileURL(join(root,'index.html')).href);await page.waitForFunction(()=>window.launcherUI?.sample(0)===true);
  const defaults=await page.evaluate(()=>({version:window.STARTUP_VISUAL.version,duration:window.STARTUP_VISUAL.durationMs,video:[document.querySelector('.slash-video').videoWidth,document.querySelector('.slash-video').videoHeight],muted:document.querySelector('.slash-video').muted}));
  assert.equal(defaults.version,13);assert.equal(defaults.duration,13500);assert.deepEqual(defaults.video,[1920,1080]);assert.equal(defaults.muted,true);
  await page.evaluate(()=>window.launcherUI.sampleAsync(8.1));
@@ -30,6 +30,8 @@ try {
  const host=await browser.newPage({viewport:{width:1280,height:720},reducedMotion:'no-preference'});host.on('pageerror',e=>errors.push(e.message));
  await host.setContent('<html><body><main>App ready</main></body></html>');await host.evaluate(await buildInjection(root,{deferStart:true}));await host.waitForFunction(()=>window.__aemeathExtension?.status().ready,null,{timeout:60000});
  const prepared=await host.evaluate(()=>({status:window.__aemeathExtension.status(),visibility:document.querySelector('iframe').style.visibility}));assert.equal(prepared.status.phase,'prepared');assert.equal(prepared.visibility,'hidden');
+ assert.equal(await host.evaluate(()=>window.__aemeathExtension.start()),true);
+ await host.waitForFunction(()=>Number(document.querySelector('iframe')?.contentDocument.querySelector('.window')?.dataset.elapsed)>.2,null,{timeout:15000});
  for(const t of [1,5,8.1,9.7,11.5,12.1,12.8]) {
   const state=await host.evaluate(async t=>{const f=document.querySelector('iframe'),w=f.contentWindow;await w.launcherUI.sampleAsync(t);const v=w.document.querySelector('.slash-video');return {videoTime:v.currentTime,error:v.error?.message||null};},t);
   assert.equal(state.error,null);assert(Math.abs(state.videoTime-Math.max(0,t-8.9))<.04,`Native action seeks at ${t}s`);

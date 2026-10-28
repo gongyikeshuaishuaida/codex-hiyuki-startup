@@ -144,7 +144,7 @@
     },
     {
       "path": "tools/verify-package.mjs",
-      "sha256": "b6078d6fcca83f445fc7e13733a2090ed331f9c341f42cd67acf3b38e5e4f162"
+      "sha256": "23d731dae38a4be0790198ed4e230c1d516706404626a003bf03a8cf544990ee"
     },
     {
       "path": "windows/StartupGate.cs",
