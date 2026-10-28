@@ -11,7 +11,7 @@ for(const item of manifest.files) {
  const data=await readFile(join(root,item.path));
  assert.equal(createHash('sha256').update(data).digest('hex'),item.sha256,`Packaged file changed or missing: ${item.path}`);
 }
-const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH}:{})});
+const browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_EXECUTABLE_PATH?{executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH}:process.platform==='win32'?{channel:'msedge'}:{})});
 const errors=[];
 try {
  const page=await browser.newPage({viewport:{width:1280,height:960},reducedMotion:'no-preference'});page.on('pageerror',e=>errors.push(e.message));

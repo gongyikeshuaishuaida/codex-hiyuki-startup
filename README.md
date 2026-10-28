@@ -10,7 +10,7 @@
 
 适用于 **Windows 10/11 x64、Windows PowerShell 5.1、Microsoft Store 版 `OpenAI.Codex`**。普通使用不需要安装 npm、Python、Node.js 或 WebView2，也不需要管理员权限。安装器会检查 Codex 附带的 Node 运行时和 Windows 的 .NET Framework 编译器。
 
-1. 在 [Releases](https://github.com/gongyikeshuaishuaida/codex-hiyuki-startup/releases/latest) 下载 `codex-hiyuki-startup-windows-v1.0.0.zip`，**完整解压**到一个准备长期保留的目录。
+1. 在 [Releases](https://github.com/gongyikeshuaishuaida/codex-hiyuki-startup/releases/latest) 下载 `codex-hiyuki-startup-windows-v1.0.1.zip`，**完整解压**到一个准备长期保留的目录。
 2. 双击 **`install.cmd`**。看到安装成功后，关闭这个安装窗口。
 3. 保存当前工作，从托盘**完全退出 Codex**，再双击桌面的 **`Codex（绯雪开屏）`**。
 
@@ -62,7 +62,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\tools\install-windows.
 - 状态与错误日志位于 `%LOCALAPPDATA%\OpenAI\ChatGPTFix`。
 - 发布前检查包含文件哈希、全新路径解压、Windows PowerShell 语法、门控编译、页面预览、注入与设置检查。**浏览器测试不等同于另一台电脑实际启动成功**；他人电脑的应用版本、硬件及策略仍以实测为准。
 
-开发者可使用 Node.js 22 或以上：
+开发者可使用 Node.js 22 或以上。Windows 的浏览器检查使用系统 Microsoft Edge，验证与应用一致的 H.264 高清动作解码；Playwright 的精简浏览器不一定带有该解码器：
 
 ```powershell
 npm ci

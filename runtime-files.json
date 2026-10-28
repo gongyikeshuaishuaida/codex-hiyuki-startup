@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "visualVersion": 13,
   "files": [
     {
@@ -116,7 +116,7 @@
     },
     {
       "path": "tools/install-windows.ps1",
-      "sha256": "d953df67aaaa5f9b9ac7e48f5bb6326abcf0071cb2cf5851767985b0133d03bb"
+      "sha256": "0a58f0b146a238a8fe5749a55c14465221a8561420f3c491f7ddfd2a5be9ba82"
     },
     {
       "path": "tools/launch-hidden.vbs",
@@ -144,11 +144,15 @@
     },
     {
       "path": "tools/verify-package.mjs",
-      "sha256": "a7072c766c766a2ce618e883b2a7995580d9350df3a9c95c4993f8c23ca98278"
+      "sha256": "b6078d6fcca83f445fc7e13733a2090ed331f9c341f42cd67acf3b38e5e4f162"
     },
     {
       "path": "windows/StartupGate.cs",
       "sha256": "d0482dee4316ae83635ad133f7f5be77fa417271a9fc3ee3f20b81d175491b8b"
+    },
+    {
+      "path": "tools/probe-media.mjs",
+      "sha256": "7d26e0e8ff7a709390cee45aa1054055390eebe569f2c5a38254a4fb6651ed7f"
     }
   ]
 }

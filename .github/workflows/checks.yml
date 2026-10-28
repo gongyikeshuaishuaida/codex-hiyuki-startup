@@ -17,6 +17,8 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npx playwright install chromium
+      - name: Check packaged video codec in test browsers
+        run: node tools/probe-media.mjs
       - run: npm run test:browser
       - name: Compile startup gate
         shell: powershell

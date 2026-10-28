@@ -44,5 +44,5 @@ foreach($location in $locations) {
 }
 $stateRoot=Join-Path $env:LOCALAPPDATA 'OpenAI\ChatGPTFix'
 New-Item -ItemType Directory -Path $stateRoot -Force | Out-Null
-[pscustomobject]@{version='1.0.0';visualVersion=13;installedAt=(Get-Date).ToString('o');root=$repo;desktop=(Join-Path $locations[0] 'Codex（绯雪开屏）.lnk');application=(Join-Path $package.InstallLocation 'app\ChatGPT.exe');configSha256=(Get-FileHash -LiteralPath (Join-Path $repo 'assets\config.js') -Algorithm SHA256).Hash} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $stateRoot 'installed.json') -Encoding UTF8
+[pscustomobject]@{version='1.0.1';visualVersion=13;installedAt=(Get-Date).ToString('o');root=$repo;desktop=(Join-Path $locations[0] 'Codex（绯雪开屏）.lnk');application=(Join-Path $package.InstallLocation 'app\ChatGPT.exe');configSha256=(Get-FileHash -LiteralPath (Join-Path $repo 'assets\config.js') -Algorithm SHA256).Hash} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $stateRoot 'installed.json') -Encoding UTF8
 Write-Output '安装成功。请从托盘完全退出 Codex，再双击桌面的 Codex（绯雪开屏）。'
